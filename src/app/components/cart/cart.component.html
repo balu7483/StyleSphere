@@ -1,0 +1,62 @@
+<div class="navbar-fixed">
+    <app-header></app-header>
+</div>
+<div *ngIf="show">
+    <div class="heading">
+        <h4 style="font-size: 35px; padding: 20px; font-family: Lato; letter-spacing: 5px;">Shopping Cart</h4>
+    </div>
+    <div class="error">
+        <h3 style="font-family: Poppins; text-align: center;">{{message}}</h3>
+    </div>
+    <div class="main-main">
+        <div class="main" *ngFor="let data of cartData">
+            <div class="image">
+                <img src="{{data.product.productImageUrl[0]}}">
+            </div>
+            <div class="details">
+                <div class="pbrand">
+                    <span class="brand">{{data.product.productBrand}}</span>
+                </div>
+                <div class="pname">
+                    <span class="name">{{data.product.productName}}</span>
+                </div>
+                <div class="pcolor">
+                    <span class="color">Color {{data.color}}</span>
+                </div>
+                <div class="psize">
+                    <span class="size">Size {{data.size}}</span>
+                </div>
+                <div class="pquantity">
+                    <span class="quantity">Quantity {{data.quantity}}</span>
+                </div>
+                <div class="pPrice">
+                    <span class="price">₹{{data.product.productPrice}}</span>
+                </div>
+                <div class="delete">
+                    <button (click)="delete(data.id)" mat-raised-button class="del"
+                        style="font-family: Poppins;">Remove</button>
+                </div>
+
+
+
+
+                <div class="order" *ngIf="showcart">
+                    <h6 class="head">Order Summary</h6>
+                    <div class="osummary">
+                        <span class="summary">Sub Total</span><span class="sub">₹{{calculateTotalPrice()}}</span>
+                    </div>
+                    <div>
+                        <span class="summary">Delivery Charges* </span><span class="free">Free</span>
+                    </div>
+                    <div class="price1">
+                        <span class="summary1">Total price ₹{{calculateTotalPrice()}}</span>
+                    </div>
+                    <div class="check">
+                        <button class="but-but" (click)="checkout(calculateTotalPrice(),data.id)">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <app-footer></app-footer>

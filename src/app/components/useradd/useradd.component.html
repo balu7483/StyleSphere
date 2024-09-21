@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+
+<h4>Add a New User</h4>
+    <article class="sample-column">
+        <form [formGroup]="addFrom">
+            <igx-input-group>
+                <input igxInput name="firstName" type="text" formControlName="firstName" />
+                <label igxLabel for="firstName">First Name</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input igxInput name="lastName" type="text" formControlName="lastName" />
+                <label igxLabel for="lastName">Last Name</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input igxInput name="email" type="email" formControlName="email" />
+                <label igxLabel for="email">Email</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input igxInput name="phoneNumber" type="number" formControlName="phoneNumber" />
+                <label igxLabel for="phoneNumber">Phone Number</label>
+            </igx-input-group>
+            <div style="padding: 0px 20px; margin-top: 20px; display: flex;">
+                <label igxLabel for="email">Select Gender*</label>
+                <input type="radio" formControlName="gender" value="Male" name="gender" style="margin-left: 10px;"><span style="margin-right: 10px;margin-left: 10px;">MALE</span>
+                <input type="radio" formControlName="gender" value="Female" name="gender"><span style ="margin-right: 10px;margin-left: 10px;">FEMALE</span>
+                <input type="radio" formControlName="gender" value="Others" name="gender" ><span style="margin-right: 10px;margin-left: 10px;">OTHERS</span>
+
+            </div>
+            <igx-input-group>
+                <input igxInput name="dob" type="date" formControlName="dob"/>
+                <label for="firstName">Date of Birth</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input igxInput name="password" type="password" formControlName="password" />
+                <label igxLabel for="firstName">Password</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input igxInput name="country" type="text" formControlName="country" />
+                <label igxLabel for="country">Country</label>
+            </igx-input-group>
+            <div style="padding: 0px 20px; margin-top: 20px; display: flex;">
+                <label igxLabel for="email">Select Role*</label>
+                <input type="radio" formControlName="role" value="ROLE_ADMIN" name="role" style="margin-left: 10px;"><span style="margin-right: 10px;margin-left: 10px;">ADMIN</span>
+                <input type="radio" formControlName="role" value="ROLE_USER" name="role"><span style="margin-right: 10px;margin-left: 10px;">USER</span>
+            </div>
+            <div style="padding: 0px 20px; margin-top: 20px; display: flex;">
+                <label igxLabel for="email">Select Status*</label>
+                <input type="radio" formControlName="status" value="ACTIVE" name="status" style="margin-left: 10px;"><span style="margin-right: 10px;margin-left: 10px;">activate</span>
+                <input type="radio" formControlName="status" value="DEACTIVE" name="status"><span style="margin-right: 10px;margin-left: 10px;">deactivate</span>
+            </div>
+            <button mat-raised-button color="primary" style="margin-top: 5px;" (click)="addUser()" [disabled]="!addFrom.valid">Add</button>
+            </form>
+            

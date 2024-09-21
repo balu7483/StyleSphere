@@ -1,0 +1,92 @@
+<div class="navbar-fixed">
+    <app-header></app-header>
+</div>
+<div>
+<div class="main">
+    <div class="details-main">
+        <div class="details">
+            <div class="pname">
+                <h5 class="name">{{productName}}</h5>
+            </div>
+            <div class="pbrand">
+                <h6 class="brand">{{productBrand}}</h6>
+            </div>
+            <div class="psize">
+                <h6
+                    style="font-size: 15px; color: rgb(67, 6, 6); font-weight: 300; font-family: Noto Sans;text-align: center;">
+                    Select Size</h6>
+                <div class="size-selection">
+                    <div *ngFor="let size of sizes" class="size-button" [class.selected]="size === selectedSize"
+                        (click)="selectSize(size)">
+                        {{ size }}
+                    </div>
+                </div>
+            </div>
+            <div class="gender-div">
+                <h6 class="gender">{{productGender}}</h6>
+            </div>
+            <div class="pcolor">
+                <h6
+                    style="font-size: 15px; color: rgb(67, 6, 6); font-weight: 300; font-family: Noto Sans;text-align: center;">
+                </h6>
+                <div class="color-selection">
+                    <div *ngFor="let color of colors" class="color-button" [class.selected]="color === selectedColor"
+                        (click)="selectColor(color)">
+                        {{ color }}
+                    </div>
+                </div>
+            </div>
+            <div class="quantity">
+                <h6 class="quan">Quantity</h6>
+                <div class="add-sub">
+                <span class="minus" (click)="sub()">-</span>
+                <span class="value">{{quantity}}</span>
+                <span class="plus" (click)="add()">+</span>
+            </div>
+            </div>
+            <div class="specification">
+                <h6 class="specs">Specification</h6>
+                <div class="spec">
+                    <span class="type-text"> Type: </span>
+                    <span class="type-body"> {{productType}}</span>
+                </div>
+                <div class="spec">
+                    <span class="type-text"> Material Type: </span>
+                    <span class="type-body"> {{productMaterialType}}</span>
+                </div>
+                <div class="spec">
+                    <span class="type-text"> Design: </span>
+                    <span class="type-body"> {{productDesign}}</span>
+                </div>
+            </div>
+            <div class="description" *ngIf="productDesc">
+            <h6 class="specs">Additional Information</h6>
+            <span class="info">{{productDesc}}</span>
+        </div>
+        <h5 style="text-align: center;font-family: Roboto Mono; color: red;">{{message}}</h5>
+        <div class="price">
+            <h6 class="price-price">₹.{{productPrice}}</h6>
+        </div>
+        <div class="button-div">
+            <button mat-raised-button class="buy" style="font-family: Poppins;" (click)="cart1()">Buy Now</button>
+            <button mat-raised-button class="add" style="font-family: Poppins;" (click)="cart()">Add to Cart</button>
+        </div>
+        </div>
+
+    </div>
+</div>
+<div>
+<div class="carousel-container">
+    <igx-carousel #carousel>
+        <igx-slide *ngFor="let slide of productImageUrl;">
+            <div class="image-container">
+                <img [src]="slide" class="img-img">
+            </div>
+        </igx-slide>
+    </igx-carousel>  
+</div>
+</div>
+</div>
+<div class="footer">
+<app-footer></app-footer>
+</div>

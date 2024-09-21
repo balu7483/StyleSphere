@@ -1,0 +1,136 @@
+<div class="navbar-fixed">
+    <app-header></app-header>
+</div>
+<div class="main">
+    <h3 style="font-size: Open Sans; text-align: center;" *ngIf="order">Your Order Has Been Placed...</h3>
+</div>
+<div *ngIf="mainmain">
+    <header class="pay">
+        <h5 style="font-family: Open Sans;">Select Payments Method</h5>
+    </header>
+    <h4 style="text-align: center; font-family: Ubuntu;margin-bottom: 15px;">Ammount Payable ₹{{totalAmount}}</h4>
+    <div class="mode">
+        <ul class="mode-ul">
+            <li class="mode-ul-li" (click)="creditop()"><svg xmlns="http://www.w3.org/2000/svg" height="100" width="100"
+                    viewBox="0 0 576 512">
+                    <path fill="#74C0FC"
+                        d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z" />
+                </svg></li>
+            <li class="mode-ul-li" (click)="netop()"><svg xmlns="http://www.w3.org/2000/svg" height="100" width="100"
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path fill="#74C0FC"
+                        d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                </svg></li>
+            <li class="mode-ul-li" (click)="debitop()"><svg xmlns="http://www.w3.org/2000/svg" height="100" width="100"
+                    viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path fill="#74C0FC"
+                        d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z" />
+                </svg> </li>
+            <li class="mode-ul-li" (click)="upiop()"> <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100"
+                    viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path fill="#74C0FC"
+                        d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 96 112 96H96 32C14.3 96 0 81.7 0 64z" />
+                </svg></li>
+        </ul>
+    </div>
+   
+    <div class="mode">
+        <ul class="mode-ul">
+            <li class="mode-ul-li-li">Credit Card</li>
+            <li class="mode-ul-li-li">Net Banking </li>
+            <li class="mode-ul-li-li"> Debit Card</li>
+            <li class="mode-ul-li-li"> UPI</li>
+        </ul>
+    </div>
+</div>
+<div class="credit" *ngIf="credit==true">
+    <h5 class="info">Credit Card Info</h5>
+    <span class="card-name">Name as on Card</span>
+    <div class="credit-credit"></div>
+    <form [formGroup]="creditForm">
+        <div>
+            <input type="text" formControlName="name" name="name" placeholder="Name" class="input"><br>
+            <mat-error *ngIf="creditForm.dirty && debitFrom.get('name')?.hasError('required')">Name
+                Required</mat-error>
+        </div>
+        <span class="card-number">Card Number</span><br>
+        <div>
+            <input type="number" formControlName="cardNumber" name="cardNumber" placeholder="16 digits Number"
+                class="input"><br>
+        </div>
+        <div class="additional">
+            <span class="exp">Expiration*</span><span class="cvv">CVV Number*</span><br>
+
+            <input type="number" formControlName="month" name="month" placeholder="Month" class="input-input">
+
+
+            <input type="number" formControlName="year" name="year" placeholder="Year" class="input-input-input">
+        
+
+
+            <input type="number" formControlName="cvv" name="cvv" placeholder="CVV Number" class="input-num">
+    
+
+        </div>
+        <button (click)="pay()" [disabled]="!creditForm.valid" mat-flat-button color="primary" style="margin-top: 10px;">Pay</button>
+    </form>
+</div>
+
+
+<div class="credit" *ngIf="debit==true">
+    <h5 class="info">Debit Card Info</h5>
+    <span class="card-name">Name as on Card*</span>
+    <div class="credit-credit"></div>
+    <form [formGroup]="debitFrom">
+        <input type="text" formControlName="name" name="name" placeholder="Name" class="input"><br>
+        <span class="card-number">Card Number*</span><br>
+        <div>
+            <input type="number" formControlName="cardNumber" name="cardNumber" placeholder="16 digits Number"
+                class="input"><br>
+            <mat-error *ngIf="debitFrom.dirty && debitFrom.get('cardNumber')?.hasError('required')">Card Number
+                Required</mat-error>
+        </div>
+        <div class="additional">
+            <span class="exp">Expiration*</span><span class="cvv">CVV Number*</span><br>
+            <input type="number" formControlName="month" name="month" placeholder="Month" class="input-input">
+            <input type="number" formControlName="year" name="year" placeholder="Year" class="input-input-input">
+            <input type="number" formControlName="cvv" name="cvv" placeholder="CVV Number" class="input-num">
+        </div>
+        <button (click)="pay()" [disabled]="!debitFrom.valid" mat-flat-button color="primary" style="margin-top: 10px;">Pay</button>
+    </form>
+</div>
+
+<div class="credit" *ngIf="net">
+    <h5 class="info">Net Banking</h5>
+    <div class="net">
+        <form [formGroup]="netFrom">
+            <span class="card-name" style="margin-bottom: 10px;">Bank Name*</span><br>
+            <input type="text" formControlName="bank" name="bank" placeholder="Bank Name" class="input"><br>
+            <span>Name of Account holder*</span><br>
+            <input type="text" formControlName="name" name="name" placeholder="Name" class="input"><br>
+            <span>Account Number*</span><br>
+            <input type="number" formControlName="accountNumber" name="accountNumber" placeholder="Account Number"
+                class="input"><br>
+            <span>IFSC Code*</span><br>
+            <input type="text" formControlName="code" name="code" placeholder="IFSC" style="margin-bottom: 10px;"
+                class="input"><br>
+            <button (click)="pay()" [disabled]="!netFrom.valid" mat-flat-button color="primary">Pay</button>
+        </form>
+    </div>
+</div>
+
+<div class="credit" *ngIf="upi">
+    <h5 class="info">UPI</h5>
+    <span class="card-name">UPI ID</span><br>
+    <form [formGroup]="upiFrom">
+        <input type="text" formControlName="upi" name="upi" placeholder="Ex.74******89@okicici"
+            style="margin-bottom: 10px;" class="input"><br>
+        <button (click)="pay()" [disabled]="!upiFrom.valid" mat-flat-button color="primary" >Pay</button>
+    </form>
+</div>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-clip-rotate">
+    <p style="font-size: 20px; color: white">Payment Processing....</p>
+  </ngx-spinner>
+
+  

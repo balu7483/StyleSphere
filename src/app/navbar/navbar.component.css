@@ -1,0 +1,9 @@
+.button-flat{
+  color: black;
+}
+
+.button-sample{
+  display: flex;
+  justify-content: center;
+}
+/* Add your CSS styling here if needed */

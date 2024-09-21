@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+<form [formGroup]="searchform">
+    <div class="input-group rounded-pill">
+      <input type="search" formControlName="search" class="form-control rounded-pill" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon1">
+      <div class="input-group-append">
+        <button mat-icon-button matSuffix (click)="search()"><mat-icon>search</mat-icon></button>
+      </div>
+    </div>
+    <h4>{{message}}</h4>
+  </form>
+<h3 style="text-align: center; font-family: Poppins; padding: 25px;">Products</h3>
+<table class="table" border="1">
+    <tr>
+        <th class="thead">Id.</th>
+        <th class="thead">Name</th>
+        <th class="thead">Brand</th>
+        <th class="thead">Gender</th>
+        <th class="thead">Type</th>
+        <th class="thead">Material Type</th>
+        <th class="thead">Date</th>
+        <th class="thead">Design</th>
+        <th class="thead">Price</th>
+        <th class="thead">Color</th>
+        <th class="thead">Size</th>
+        <th class="thead">Description</th>
+        <th class="thead">ImageUrl</th>
+        <th class="thead">Edit</th>
+        <th class="thead">Delete</th>
+    </tr>
+
+    <tr *ngIf="searchData;else Data">
+        <td class="tdata">{{searchData.productId}}</td>
+        <td class="tdata">{{searchData.productName}}</td>
+        <td class="tdata">{{searchData.productBrand}}</td>
+        <td class="tdata">{{searchData.productGender}}</td>
+        <td class="tdata">{{searchData.productType}}</td>
+        <td class="tdata">{{searchData.productMaterialType}}</td>
+        <td class="tdata">{{searchData.productDate}}</td>
+        <td class="tdata">{{searchData.productDesign}}</td>
+        <td class="tdata">{{searchData.productPrice}}</td>
+        <td class="tdata">{{searchData.productDesc}}</td>
+        <td>
+        <ul>
+            <li *ngFor="let c of searchData.productColor">{{c}}</li>
+        </ul>
+        </td>
+        <td>
+            <ul>
+                <li *ngFor="let s of searchData.productSize">{{s}}</li>
+            </ul>
+        </td>
+        <td>
+            <ul class="image">
+                <li  class="image-li" *ngFor="let i of searchData.productImageUrl"><img [src]="i"></li>
+            </ul> 
+        </td>
+        <td><button mat-button color="primary" (click)="editProduct(searchData.productId)"><mat-icon>edit</mat-icon></button></td>
+        <td><button mat-button color="primary" (click)="deleteProduct(searchData.productId)"><mat-icon >delete</mat-icon></button></td>
+    </tr>
+    <ng-template #Data>
+    <tr *ngFor="let product of productData">
+        <td class="tdata">{{product.productId}}</td>
+        <td class="tdata">{{product.productName}}</td>
+        <td class="tdata">{{product.productBrand}}</td>
+        <td class="tdata">{{product.productGender}}</td>
+        <td class="tdata">{{product.productType}}</td>
+        <td class="tdata">{{product.productMaterialType}}</td>
+        <td class="tdata">{{product.productDate}}</td>
+        <td class="tdata">{{product.productDesign}}</td>
+        <td class="tdata">{{product.productPrice}}</td>
+        <td class="tdata">{{product.productDesc}}</td>
+        <td>
+        <ul>
+            <li *ngFor="let c of product.productColor">{{c}}</li>
+        </ul>
+        </td>
+        <td>
+            <ul>
+                <li *ngFor="let s of product.productSize">{{s}}</li>
+            </ul>
+        </td>
+        <td>
+            <ul class="image">
+                <li class="image-li" *ngFor="let i of product.productImageUrl"><img [src]="i" ></li>
+            </ul>
+        </td>
+        <td><button mat-button color="primary" (click)="editProduct(product.productId)"><mat-icon>edit</mat-icon></button></td>
+        <td><button mat-button color="primary" (click)="deleteProduct(product.productId)"><mat-icon >delete</mat-icon></button></td>
+    </tr>
+</ng-template>
+</table>
+
+
+<!-- <img src="../../../assets/Images/jack 1.webp"> -->

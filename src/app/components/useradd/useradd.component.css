@@ -1,0 +1,8 @@
+.sample-column {
+    max-width: 550px;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}

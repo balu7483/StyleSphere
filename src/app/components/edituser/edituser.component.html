@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<h4>Edit User</h4>
+    <article class="sample-column">
+        <form [formGroup]="editform">
+            <igx-input-group>
+                <input type="text" [(ngModel)]="firstName" igxInput  formControlName="firstName" />
+                <label igxLabel for="firstName">First Name</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input type="text"[(ngModel)]="lastName" igxInput  formControlName="lastName" />
+                <label igxLabel for="lastName">Last Name</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input type="email" [(ngModel)]="email" igxInput  formControlName="email" />
+                <label igxLabel for="email">Email</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input igxInput name="dob" type="date" [(ngModel)]="dob" formControlName="dob"/>
+                <label for="firstName">Date of Birth</label>
+            </igx-input-group>
+            <igx-input-group>
+                <input type="text" [(ngModel)]="country" igxInput  formControlName="country" />
+                <label igxLabel for="country">Country</label>
+            </igx-input-group>
+                <select formControlName="gender" id="gender"  class="form-select" aria-label="Default select example" [(ngModel)]="gender">
+                    <option value="">Select Gender</option>
+                    <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+                  </select><br>
+                  <select formControlName="role" id="role"  class="form-select" aria-label="Default select example" [(ngModel)]="role">
+                    <option value="">Role</option>
+                    <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                  </select><br>
+                  <select formControlName="status" id="status"  class="form-select" aria-label="Default select example" [(ngModel)]="status">
+                    <option value="">Select Account Status</option>
+                    <option *ngFor="let status of statusValue" [value]="status">{{status}}</option>
+                  </select><br>
+
+            <button mat-raised-button color="primary" style="margin-top: 5px;" [disabled]="!editform.valid" (click)="editUser()">Save</button>
+            </form>
+
+
+            <!-- <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">Please enter a valid email address</mat-error>
+            <mat-error *ngIf="emailControl.hasError('required')">Email is <strong>required</strong></mat-error> -->

@@ -1,0 +1,82 @@
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+  }
+  .main{
+    margin-top: 130px;
+  }
+  .pay{
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  .mode-ul{
+    display: flex;
+    justify-content: center;
+  }
+
+  .mode-ul-li{
+    padding: 5px 45px;
+    cursor: pointer;
+  }
+
+  .mode-ul-li-li{
+   padding: 0px 55px;
+   font-family: Ubuntu;
+   cursor: pointer;
+  }
+
+  .credit-credit{
+    display: flex;
+  }
+
+  .credit{
+    padding: 30px;
+  }
+  .input{
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Poppins;
+  }
+  .input-input{
+    width: 80px;
+    margin-right: 10px;
+    font-family: Poppins;
+  }
+  .input-input-input{
+    width: 80px;
+    margin-right: 90px;
+    font-family: Poppins;
+  }
+
+  .input-num{
+    width: 240px;
+    font-family: Poppins;
+  }
+  .info{
+    font-family: Lato;
+    margin-bottom: 10px;
+  }
+  .exp{
+    margin-right: 185px;
+    font-family: Inter;
+  }
+
+  .card-name{
+    font-family: Inter;
+  }
+
+  .card-number{
+    font-family: Inter;
+  }
+  .cvv{
+    font-family: Inter;
+  }
+
+  
+  

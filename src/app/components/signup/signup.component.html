@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<h4>Sign Up</h4>
+<article class="sample-column">
+    <form [formGroup]="signupform">
+        <igx-input-group>
+            <input igxInput name="firstName" type="text" formControlName="firstName" />
+            <label igxLabel for="firstName">First Name</label>
+        </igx-input-group>
+        <igx-input-group>
+            <input igxInput name="lastName" type="text" formControlName="lastName" />
+            <label igxLabel for="lastName">Last Name</label>
+        </igx-input-group>
+        <igx-input-group>
+            <input igxInput name="email" type="email" formControlName="email" />
+            <label igxLabel for="email">Email</label>
+        </igx-input-group>
+        <igx-input-group>
+            <input igxInput name="dob" type="date" formControlName="dob"/>
+            <label for="firstName">Date of Birth</label>
+        </igx-input-group>
+        <igx-input-group>
+            <input igxInput name="gender" type="text" formControlName="gender" />
+            <label igxLabel for="gender">Gender</label>
+        </igx-input-group>
+        <igx-input-group>
+            <input igxInput name="password" type="password" formControlName="password" />
+            <label igxLabel for="firstName">Password</label>
+        </igx-input-group>
+        <igx-input-group>
+            <input igxInput name="country" type="text" formControlName="country" />
+            <label igxLabel for="country">Country</label>
+        </igx-input-group>
+        <button mat-raised-button color="primary" style="margin-top: 5px;"  [disabled]="!signupform.valid" (click)="signup()">Sign Up</button>
+        </form>

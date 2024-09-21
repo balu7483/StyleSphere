@@ -1,0 +1,27 @@
+.sample-column {
+    max-width: 550px;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.button-sample {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 30%;
+    margin: 16px 0;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    
+  }

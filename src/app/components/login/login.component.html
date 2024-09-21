@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<h6 style="text-align: center;">{{message}}</h6>
+<div class="main">
+  <h3 style="text-align: center ;">Login</h3>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+          <form [formGroup]="loginform" class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+              <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">Please enter a valid email address</mat-error>
+              <mat-error *ngIf="emailControl.hasError('required')">Email is <strong>required</strong></mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Enter Your Password">
+            <mat-error *ngIf="passwordControl.hasError('required')">Password is <strong>required</strong></mat-error>
+          </mat-form-field>
+      <div class="button-sample">
+        <button mat-raised-button  [disabled]="!loginform.valid" (click)="login(loginform.value.email)" type="button"><mat-icon>login</mat-icon>Login</button>
+    </div>
+    </form>
+    </div>
+    <div style="display: flex;padding: 10px; text-align: center;justify-content: center;">
+      <h6><a routerLink="/signup">New to Style Sphere? Click to Create Account</a></h6>
+  </div>
+  </div>
+

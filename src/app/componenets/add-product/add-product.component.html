@@ -1,0 +1,82 @@
+<form [formGroup]="productForm">
+    <h4>Add New Product</h4>
+    <mat-form-field class="example-full-width">
+        <mat-label>Product Name</mat-label>
+        <input type="text" matInput formControlName="productName" placeholder="Enter Product Name">
+        <mat-error *ngIf="productForm.get('productName')?.hasError('required')">Name is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Select Brand</mat-label>
+        <mat-select formControlName="productBrand" >
+            <mat-option *ngFor="let brand of Brands" [value]="brand">{{brand}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="productForm.get('productBrand')?.hasError('required')">Brand is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Select Gender</mat-label>
+        <mat-select formControlName="productGender"  >
+            <mat-option *ngFor="let gender of Genders" [value]="gender">{{gender}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="productForm.get('productGender')?.hasError('required')">Gender is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Choose a date</mat-label>
+        <input type="date" matInput formControlName="productType" formControlName="productDate">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Select Type</mat-label>
+        <mat-select formControlName="productType"  >
+            <mat-option *ngFor="let type of Types" [value]="type">{{type}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="productForm.get('productType')?.hasError('required')">Type is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Select Material Type</mat-label>
+        <mat-select formControlName="productMaterialType"  >
+            <mat-option *ngFor="let material of MaterialTypes" [value]="material">{{material}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="productForm.get('productMaterialType')?.hasError('required')">Material Type is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Select Design</mat-label>
+        <mat-select formControlName="productDesign"  >
+            <mat-option *ngFor="let design of Designs" [value]="design">{{design}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="productForm.get('productDesign')?.hasError('required')">Design is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Product Price</mat-label>
+        <input type="number" matInput formControlName="productPrice" placeholder="Enter Product Price">
+        <mat-error *ngIf="productForm.get('productPrice')?.hasError('required')">Name is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Product Description</mat-label>
+        <textarea matInput placeholder="Description" formControlName="productDesc" ></textarea>
+        <mat-error *ngIf="productForm.get('productDescription')?.hasError('required')">Description is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <div formArrayName="productColor">
+        <mat-form-field class="example-full-width" *ngFor="let colorControl of productColorArray.controls; let i = index">
+            <input type="text" matInput [formControlName]="i" placeholder="Enter Color" >
+            <button mat-stroked-button  (click)="removeProductColor(i)" type="button" class="button">Remove Color</button>
+        </mat-form-field>
+          <button mat-stroked-button  (click)="addProductColor()" type="button" style="padding: 20px;margin-bottom: 20px;margin-left: 15px;">Add Color</button>
+      </div>
+      <div formArrayName="productSize">
+        <mat-form-field class="example-full-width" *ngFor="let sizeControl of productSizeArray.controls; let i = index">
+            <input type="text" matInput [formControlName]="i" placeholder="Enter Size">
+            <button mat-stroked-button  (click)="removeProductSize(i)" type="button" class="button">Remove Size</button>
+        </mat-form-field>
+          <button mat-stroked-button  (click)="addProductSize()" type="button" style="padding: 20px;margin-bottom: 20px;margin-left: 15px;">Add Size</button>
+      </div>
+      <div formArrayName="productImageUrl">
+        <mat-form-field class="example-full-width" *ngFor="let imageUrlControl of productImageUrlArray.controls; let i = index">
+            <input type="text" matInput [formControlName]="i" placeholder="Enter ImageUrl">
+            <button mat-stroked-button  (click)="removeProductImageUrl(i)" class="button">Remove ImageUrl</button>
+        </mat-form-field>
+          <button mat-stroked-button (click)="addProductImageUrl()"  style="padding: 5px;" style="padding: 20px;margin-bottom: 20px;margin-left: 15px;">Add ImageUrl </button>
+      </div>
+      <button mat-stroked-button color="primary" (click)="addProduct()" style="padding: 5px;" [disabled]="!productForm.valid" style="padding: 20px;margin-bottom: 20px;margin-left: 15px;">Add</button>
+</form>
+
+
+

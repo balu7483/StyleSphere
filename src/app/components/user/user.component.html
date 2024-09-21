@@ -1,0 +1,58 @@
+ <app-navbar></app-navbar>
+
+<form [formGroup]="searchform">
+    <div class="input-group rounded-pill">
+      <input type="search" formControlName="search" class="form-control rounded-pill" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon1">
+      <div class="input-group-append">
+        <button mat-icon-button matSuffix (click)="search()"><mat-icon>search</mat-icon></button>
+      </div>
+    </div>
+  </form>
+<h4>{{searchMessage}}</h4>
+<div>
+    <h3 style="font-family: Poppins; text-align: center; padding: 25px;">Users</h3>
+</div>
+<table class="table table-reflow">
+    <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>EMAIL</th>
+        <th>DATE OF BIRTH</th>
+        <th>COUNTRY</th>
+        <th>GENDER</th>
+        <th>ROLE</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+        <th>STATUS</th>
+    </tr>
+    <tr *ngIf="searchData; else Data">
+        <th>{{searchData.userId}}</th>
+        <th>{{searchData.firstName}}</th>
+        <th>{{searchData.lastName}}</th>
+        <th>{{searchData.email}}</th>
+        <th>{{searchData.dob}}</th>
+        <th>{{searchData.country}}</th>
+        <th>{{searchData.gender}}</th>
+        <th>{{searchData.role}}</th>
+        <th><button mat-button (click)="edit(searchData.userId)"><mat-icon>edit</mat-icon></button></th>
+        <th><button mat-button (click)="delete(searchData.userId)"><mat-icon>delete</mat-icon></button></th>
+        <th>{{searchData.status}}</th>
+    </tr>
+<table class="table table-reflow">
+    <ng-template #Data>
+    <tr *ngFor="let data of userData">
+        <th>{{data.userId}}</th>
+        <th>{{data.firstName}}</th>
+        <th>{{data.lastName}}</th>
+        <th>{{data.email}}</th>
+        <th>{{data.dob}}</th>
+        <th>{{data.country}}</th>
+        <th>{{data.gender}}</th>
+        <th>{{data.role}}</th>
+        <th><button mat-button (click)="edit(data.userId)"><mat-icon>edit</mat-icon></button></th>
+        <th><button mat-button (click)="delete(data.userId)"><mat-icon>delete</mat-icon></button></th>
+        <th>{{data.status}}</th>
+    </tr>
+</ng-template>
+ 

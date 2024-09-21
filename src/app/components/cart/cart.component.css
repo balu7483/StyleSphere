@@ -1,0 +1,149 @@
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+  }
+
+  .heading{
+    margin-top: 125px;
+  }
+
+  .main{
+    display: flex;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: black; */
+    width: 800px;
+    height: auto;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    background-color: #f7f7f7;
+  }
+  .image{
+    margin-left: 10px;
+    width: 400px;
+    height: auto;
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: black; */
+    margin-top: 10px;
+  }
+  .details{
+    margin-left: 10px;
+    width: auto;
+    height: auto;
+    /* border-width: 2px;
+    border-style: solid;
+    border-color: black; */
+    margin-top: 10px;
+  }
+
+  .brand{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: Inter;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .name{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-family: Roboto;
+    margin-bottom: 20px;
+  }
+
+  .color{
+    display: flex;
+    justify-content: center;
+    font-family: Roboto Mono;
+    margin-bottom: 10px;
+  }
+
+  .size{
+    display: flex;
+    justify-content: center;
+    font-family: Roboto Mono;
+    margin-bottom: 10px;
+  }
+  .quantity{
+    display: flex;
+    justify-content: center;
+    font-family: Roboto Mono;
+    margin-bottom: 35px;
+  }
+  .price{
+    display: flex;
+    justify-content: center;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  .order{
+    position: absolute;
+    top: 185px;
+    right: 70px;
+    /* border-width: 2px;
+    border-style: solid;
+    border-color:red; */
+    width: 500px;    
+  }
+  .head{
+    text-align: center;
+    font-family: Roboto Mono;
+    font-size: 30px;
+  }
+  .summary{
+    margin-top: 25px;
+    font-size: 20px;
+    font-family: Inter;
+  }
+
+  .osummary{
+    margin-top: 50px;
+  }
+  .price1{
+    margin-top: 50px;
+    text-align: center;
+
+  }
+
+  .summary1{
+    font-family: Poppins;
+    font-size: 35px;
+
+  }
+
+  .check{
+    margin-top: 50px;
+  }
+  .but-but{
+    height: 50px;
+    width: 100%;
+    font-family: Ubuntu;
+    font-size: 25px;
+    background-color: black;
+    border: none;
+    color: white;
+  }
+  .sub{
+    float: right;
+    margin-right: 30px;
+    font-family: Lato;
+  }
+
+.free{
+  float: right;
+  margin-right: 30px;
+  font-family: Lato;
+}
+
+.delete{
+  display: flex;
+  justify-content: center;
+}

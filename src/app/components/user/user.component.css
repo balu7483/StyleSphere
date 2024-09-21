@@ -1,0 +1,14 @@
+.thead{
+    font-weight: bold;
+    font-family: Poppins;
+    text-decoration: underline;
+}
+.tdata{
+    padding: 10px;
+}
+.input-group{
+    padding: 10px;
+}
+.form-control-input{
+    width: 400px;
+}

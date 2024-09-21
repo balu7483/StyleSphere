@@ -1,0 +1,227 @@
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+  }
+
+  .main{
+    width: 570px;
+    height: auto;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: black; */
+    position: relative;
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 300px;
+  }
+
+ 
+  .carousel-container {
+    width: 900px;
+    height: 80vh;
+    /* margin: 16px auto; */
+    margin-top: 70px;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: black; */
+    margin-top: 130px;
+    margin-left: 15px;
+}
+
+:host ::ng-deep{
+    .image-container {
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .igx-carousel {
+        max-width: 100%;
+        width: unset;
+    }
+
+    .igx-nav-dot {
+        background: black;
+        box-shadow: none;
+        width: 15px;
+        height: 15px;
+    }
+
+    .igx-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: unset;
+    }
+
+    .igx-slide img {
+        object-fit: fill;
+        max-width: 90%;
+    }
+  }
+
+  .name{
+    text-align: center;
+    font-family: Poppins;
+    font-weight: bold;
+  }
+
+  .pbrand{
+    padding: 10px;
+  }
+
+  .brand{
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+  }
+
+  /* size-selection.component.css */
+.size-selection {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.size-button {
+  padding: 8px 16px;
+  margin: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.size-button.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.psize{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontally center */
+  justify-content: center; /* vertically center */
+}
+
+.gender-div{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.gender{
+  font-weight: 400;
+  color: rgb(120, 60, 42);
+}
+
+.pcolor{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* horizontally center */
+  justify-content: center; /* vertically center */
+}
+
+.color-selection{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-button{
+  padding: 8px 16px;
+  margin: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.color-button.selected{
+  background-color: #007bff;
+  color: #fff;
+}
+
+.specs{
+  padding: 15px;
+  text-decoration: underline;
+  font-family: Montserra;
+  font-size: 25px;
+}
+.spec{
+  padding: 0px 15px;
+}
+
+.type-text{
+  text-decoration: underline;
+  margin-right: 5px;
+  font-family: Open Sans;
+}
+.type-body{
+  font-family: Roboto Mono;
+  font-weight: bold;
+}
+
+.info{
+  text-align: justify;
+  display: inline-block;  
+  width: 500px;
+  padding: 0px 20px;
+  font-size: 18px;
+  font-family: Ubuntu;
+}
+
+.description{
+  border-bottom: 2px solid black;
+}
+
+.price{
+  padding: 20px 0px;
+}
+
+.price-price{
+  text-align: center;
+  font-size: 30px;
+  font-family: Lato;
+}
+
+.button-div{
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+}
+.buy{
+  margin-right: 10px;
+}
+/* .footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 10px;
+} */
+
+.quan{
+  text-align: center;
+  padding: 15px;
+}
+
+.add-sub{
+  display: flex;
+  justify-content: center;
+}
+.plus{
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 10px;
+  font-family: Poppins;
+}
+.minus{
+  cursor: pointer;
+  font-size: 30px;
+  margin-right: 10px;
+  font-family: Poppins;
+}
+
+.value{
+  font-size: 30px;
+  font-family: Inter;
+  color: gray;
+}

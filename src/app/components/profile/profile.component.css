@@ -1,0 +1,9 @@
+.firstName{
+    display: flex;
+    padding: 10px;
+}
+.title{
+    margin-right: 5px;
+    font-family: Poppins;
+    font-weight: bold;
+}

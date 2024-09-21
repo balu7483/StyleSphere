@@ -1,0 +1,29 @@
+
+.carousel-container{
+   width: auto;
+   height: 500px;
+}
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+  }
+  .carousel-container {
+    margin-top: 100px;
+  }
+  .h4{
+    text-align: center;
+    color:darkslategrey;
+    font-family: Noto Sans;
+  }
+  .card-image{
+    height: auto;
+    width: 370px;
+    padding: 30px;
+  }
+  .card-card{
+    display: flex;
+    padding: 15px;
+  }

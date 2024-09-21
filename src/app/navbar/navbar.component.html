@@ -1,0 +1,46 @@
+<div class="sample-column" style="color: slategray;">
+  <igx-navbar title="Style Sphere">
+    <igx-navbar-action>
+      <button igxButton="icon">
+        <button mat-button [matMenuTriggerFor]="menu"><igx-icon>menu</igx-icon></button>
+        <mat-menu #menu="matMenu">
+          <div *ngIf="shouldShowsignup()||shouldshowMenu()">
+          <button mat-menu-item (click)="user()">Users<mat-icon>group</mat-icon></button>
+        </div>
+          <div *ngIf="shouldShowsignup()||shouldshowMenu()">
+          <button  mat-menu-item  (click)="products()" ><mat-icon>shopping_basket</mat-icon>Products</button>
+        </div>
+          <button mat-menu-item><mat-icon> forum</mat-icon>About Us</button>
+        </mat-menu>
+
+      </button>
+    </igx-navbar-action>
+    <div class="button-sample" *ngIf="shouldShowButtonOn()||shouldShowButtonOn1()">
+      <button igxButton="flat" igxRipple class="button-flat" (click)="login()"><mat-icon>login</mat-icon>Login</button>
+    </div>
+    <div class="button-sample" *ngIf="shouldShowButtonOn()">
+      <button igxButton="flat" igxRipple class="button-flat" (click)="signUp()"><mat-icon>person_add</mat-icon>Sign UP</button>
+    </div>
+    <div class="button-sample" *ngIf="shouldShowsignup()||shouldshowMenu()">
+      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>settings</mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="profile()">{{email}}</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </div>
+    <div class="button-sample" *ngIf="shouldShowButton()">
+      <button igxButton="flat" igxRipple class="button-flat" (click)="addUser()"><mat-icon>person_add</mat-icon></button>
+    </div>
+    <div class="button-sample" *ngIf="shouldshowMenu1()">
+      <button igxButton="flat" igxRipple class="button-flat" (click)="addProduct()"><mat-icon>add_to_photos</mat-icon></button>
+    </div>
+  </igx-navbar>
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>
+
+<!-- </div>
+<div class="button-sample" *ngIf="shouldShowsignup()">
+  <button igxButton="flat" igxRipple class="button-flat" (click)="profile()">Profile<mat-icon>person</mat-icon>
+</button>
+</div> -->

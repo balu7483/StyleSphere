@@ -1,0 +1,45 @@
+.img{
+    width: 200px;
+}
+.nav {
+    background-color: lightgray;
+    display: flex;
+    align-items: flex-end; /* Align items at the bottom */
+    border-bottom: 1px solid #faf7f7;
+}
+
+.nav-div {
+    flex-grow: 1; /* Allow the div to grow and take up remaining space */
+}
+
+.nav-ul {
+    padding: 10px 0; /* Adjust padding */
+    text-align: center;
+}
+
+.nav-ul-li {
+    padding: 10px;
+    font-family: Poppins;
+    font-weight: 400;
+    display: inline; /* Display li elements inline */
+    color: rgb(3, 11, 42);
+    cursor: pointer;
+}
+.connect{
+    position: absolute;
+    top: 8px;
+    right: 25px;
+    font-size: 20px;
+    display: flex;
+    
+}
+.connect-li{
+   padding: 10px;
+   font-family: Inter;
+   cursor: pointer;
+}
+.input{
+    margin-right: 5px;
+    border-radius: 50px;
+    border-color: black;
+}

@@ -1,0 +1,39 @@
+    <nav style class="nav">
+        <div>
+        <img src="../../assets/Images/logo.png" class="img" routerLink="/home/{{email}}">
+    </div>
+    <div class="connect-div">
+        <ul class="connect">
+            <li class="connect-li" routerLink="/login" *ngIf="show">Sign In</li>
+            <li class="connect-li" routerLink="/signup" *ngIf="show">Join</li>
+        </ul>
+    </div>
+        <div class="nav-div">
+        <ul class="nav-ul">
+            <li class="nav-ul-li" routerLink="/card/MEN/{{email}}">MEN</li>
+            <li class="nav-ul-li" routerLink="/card/WOMEN/{{email}}">WOMEN</li>
+            <li class="nav-ul-li">BRANDS</li>
+            <li class="nav-ul-li"><input type="text" class="input" placeholder="Search..."><button class="btn btn-outline-primary" style="border-radius: 50px;">Search</button></li>
+            <li class="nav-ul-li"> <button mat-button [matMenuTriggerFor]="menu"><fa-icon [icon]="faperson"></fa-icon></button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="profile()">{{email}}</button>
+                  <button mat-menu-item >Your Orders</button>
+                  <button mat-menu-item >Settings</button>
+                  <button mat-menu-item >Contact Us</button>
+                  <button mat-menu-item (click)="logout()" >Logout</button>
+                </mat-menu></li>
+            <li class="nav-ul-li" (click)="cart()"><fa-icon [icon]="fashop"></fa-icon></li>
+        </ul> 
+    </div>
+    <div class="button-sample" >
+       
+      </div>
+    </nav>
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="pacman">
+        <p style="font-size: 20px; color: white">Loading...</p>
+      </ngx-spinner>
+
+      <!-- <li class="nav-ul-li" (click)="profile()"></li> -->
+
+
+      <!-- <img src="../../assets/Images/sallen1.jpg" alt=""> -->

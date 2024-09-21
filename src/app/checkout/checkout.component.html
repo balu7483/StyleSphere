@@ -1,0 +1,29 @@
+<div class="navbar-fixed">
+<app-header></app-header>
+</div>
+<div class="main">
+<div class="address">
+<h4 class="add">Select Address</h4>
+<div class="add-address" *ngIf="!emailData.address||add==true">
+<h5 class="add-add">Add address</h5>
+<form [formGroup]="updateform">
+    <mat-form-field>
+        <mat-label>Address</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="5"
+                  cdkAutosizeMaxRows="5" formControlName="address"></textarea>
+      </mat-form-field><br>
+      <button mat-stroked-button (click)="updateAddress()" [disabled]="!updateform.valid">Save</button>
+</form>
+</div>
+</div>
+</div>
+<div class="select" *ngIf="add==false">
+    <h6 class="address-add">{{address}}</h6>
+</div>
+<div style="display: flex;justify-content: center;" *ngIf="add==false">
+<button mat-stroked-button (click)="select()" style="margin-right: 10px;">Add new Address</button>
+<button mat-stroked-button (click)="procede()" >Procede to Buy</button>
+</div>

@@ -1,0 +1,36 @@
+<div class="navbar-fixed">
+    <app-header></app-header>
+</div>
+<div class="card-div">
+    <h4>{{value}}'s Clothings</h4>
+</div>
+<div class="card-container">
+<div *ngFor="let data of genderData">
+    <div class="card-out" >
+        <div class="card-name">
+        <span class="name">{{data.productName}}</span>
+    </div>
+    <div class="cardBrand">
+        <span class="brand">{{data.productBrand}}</span>
+    </div>
+    <div class="carousel-container" routerLink="/cardInfo/{{data.productId}}/{{email}}">
+        <igx-carousel #carousel>
+            <igx-slide *ngFor="let slide of data.productImageUrl;">
+                <div class="image-container">
+                    <img [src]="slide" class="img">
+                </div>
+            </igx-slide>
+        </igx-carousel>
+    </div>
+    <div class="card-price">
+        <span class="price">₹{{data.productPrice}}</span>
+    </div>
+    <div class="card-color">
+      <span class="color" >{{data.productColor}}</span>
+    </div>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>
+
+<!-- <img src="../../assets/Images/pslide1.jpg" -->
